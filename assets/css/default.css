@@ -1,0 +1,319 @@
+:root{
+	--mp0:0px;
+	--vh-100:100vh;
+	--w-100:100%;
+	--ma:auto;
+	--pd:70px;
+	--md:70px;
+}
+*{
+	box-sizing:border-box;
+	margin:var(--mp0);
+	padding:var(--mp0);
+	font-family: "jost", sans-serif;
+}
+.m0{
+	margin:var(--mp0);
+}
+.p0{
+	padding:var(--mp0);
+}
+.vh-100{
+	height:var(--vh-100);
+}
+.w-100{
+	width:var(--w-100);
+}
+.pd{
+	padding-left:var(--pd);
+	padding-right:var(--pd);
+}
+.ma{
+	margin-right:var(--ma);
+	margin-left:var(--ma);
+}
+.md{
+	margin-right:var(--md);
+	margin-left:var(--md);
+}
+.left{
+	text-align:left;
+}
+.right{
+	text-align:right;
+}
+.center{
+	text-align:center;
+}
+.d-fl{
+	display:flex;
+	justify-content:space-between;
+	align-items:center;
+}
+.fl-st{
+	justify-content:flex-start;
+}
+.fl-sa{
+	justify-content: space-around;
+}
+.d-gr{
+	display:grid;
+	justify-content:space-between;
+	align-items:center;
+	align-content:center;
+}
+.d-bl{
+	display:block;
+}
+.d-in{
+	display:inline;
+}
+.d-inb{
+	display:inline-block;
+}
+.d-no{
+	display:none;
+}
+.rel{
+	position:relative;
+}
+.abs{
+	position:absolute;
+}
+.fix{
+	position:fixed;
+}
+
+@media screen and (max-width: 992px) {
+	:root{
+		--pd:40px;
+		--md:40px;
+	}
+	.m0-t{
+		margin:var(--mp0);
+	}
+	.p0-t{
+		padding:var(--mp0);
+	}
+	.vh-100-t{
+		height:var(--vh-100);
+	}
+	.w-100-t{
+		width:var(--w-100);
+	}
+	.pd-t{
+		padding-left:var(--pd);
+		padding-right:var(--pd);
+	}
+	.ma-t{
+		margin-right:var(--ma);
+		margin-left:var(--ma);
+	}
+	.md-t{
+		margin-right:var(--md);
+		margin-left:var(--md);
+	}
+	.left-t{
+		text-align:left;
+	}
+	.right-t{
+		text-align:right;
+	}
+	.center-t{
+		text-align:center;
+	}
+	.d-fl-t{
+		display:flex;
+		justify-content:space-between;
+		align-items:center;
+	}
+	.fl-st-t{
+		justify-content:flex-start;
+	}
+	.fl-sa-t{
+		justify-content: space-around;
+	}
+	.d-gr-t{
+		display:grid;
+		justify-content:space-between;
+		align-items:center;
+		align-content:center;
+	}
+	.d-bl-t{
+		display:block;
+	}
+	.d-in-t{
+		display:inline;
+	}
+	.d-inb-t{
+		display:inline-block;
+	}
+	.d-no-t{
+		display:none;
+	}
+	.rel-t{
+		position:relative;
+	}
+	.abs-t{
+		position:absolute;
+	}
+	.fix-t{
+		position:fixed;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	:root{
+		--pd:30px;
+		--md:30px;
+	}
+	.m0-tm{
+		margin:var(--mp0);
+	}
+	.p0-tm{
+		padding:var(--mp0);
+	}
+	.vh-100-tm{
+		height:var(--vh-100);
+	}
+	.w-100-tm{
+		width:var(--w-100);
+	}
+	.pd-tm{
+		padding-left:var(--pd);
+		padding-right:var(--pd);
+	}
+	.ma-tm{
+		margin-right:var(--ma);
+		margin-left:var(--ma);
+	}
+	.md-tm{
+		margin-right:var(--md);
+		margin-left:var(--md);
+	}
+	.left-tm{
+		text-align:left;
+	}
+	.right-tm{
+		text-align:right;
+	}
+	.center-tm{
+		text-align:center;
+	}
+	.d-fl-tm{
+		display:flex;
+		justify-content:space-between;
+		align-items:center;
+	}
+	.fl-st-tm{
+		justify-content:flex-start;
+	}
+	.fl-sa-tm{
+		justify-content: space-around;
+	}
+	.d-gr-tm{
+		display:grid;
+		justify-content:space-between;
+		align-items:center;
+		align-content:center;
+	}
+	.d-bl-tm{
+		display:block;
+	}
+	.d-in-tm{
+		display:inline;
+	}
+	.d-inb-tm{
+		display:inline-block;
+	}
+	.d-no-tm{
+		display:none;
+	}
+	.rel-tm{
+		position:relative;
+	}
+	.abs-tm{
+		position:absolute;
+	}
+	.fix-tm{
+		position:fixed;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	:root{
+		--pd:20px;
+		--md:20px;
+	}
+	.m0-m{
+		margin:var(--mp0);
+	}
+	.p0-m{
+		padding:var(--mp0);
+	}
+	.vh-100-m{
+		height:var(--vh-100);
+	}
+	.w-100-m{
+		width:var(--w-100);
+	}
+	.pd-m{
+		padding-left:var(--pd);
+		padding-right:var(--pd);
+	}
+	.ma-m{
+		margin-right:var(--ma);
+		margin-left:var(--ma);
+	}
+	.md-m{
+		margin-right:var(--md);
+		margin-left:var(--md);
+	}
+	.left-m{
+		text-align:left;
+	}
+	.right-m{
+		text-align:right;
+	}
+	.center-m{
+		text-align:center;
+	}
+	.d-fl-m{
+		display:flex;
+		justify-content:space-between;
+		align-items:center;
+	}
+	.fl-st-m{
+		justify-content:flex-start;
+	}
+	.fl-sa-m{
+		justify-content: space-around;
+	}
+	.d-gr-m{
+		display:grid;
+		justify-content:space-between;
+		align-items:center;
+		align-content:center;
+	}
+	.d-bl-m{
+		display:block;
+	}
+	.d-in-m{
+		display:inline;
+	}
+	.d-inb-m{
+		display:inline-block;
+	}
+	.d-no-m{
+		display:none;
+	}
+	.rel-m{
+		position:relative;
+	}
+	.abs-m{
+		position:absolute;
+	}
+	.fix-m{
+		position:fixed;
+	}
+}
