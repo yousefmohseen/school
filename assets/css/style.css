@@ -39,7 +39,7 @@ a{
 .active{
 	background-color: var(--bg1);
 }
-.active a,li.active svg{
+.active a,li.active svg,.active{
 	color: var(--act1);
 }
 .active-sec{
@@ -94,6 +94,9 @@ div.head div input{
 	border:none;
 	border-bottom:1px solid var(--prm3);
 }
+div.head div i{
+	cursor:pointer;
+}
 .input,textarea{
 	width: 100%;
 	height:48px;
@@ -103,6 +106,35 @@ div.head div input{
 	border:1px solid var(--prm2);
 	outline: none;
 }
+div.input{
+	position:relative;
+	input{
+		width:100%;
+		height:100%;
+		border-radius: 8px;
+		border:none;
+		outline:none;
+	}
+	span{
+		position:absolute;
+		top:16px;
+		right:16px;
+		i:first-child{
+			display:block;
+		}
+		i:last-child{
+			display:none;
+		}
+	}
+}
+div.input span.eye-slash{
+	i:first-child{
+		display:none;
+	}
+	i:last-child{
+		display:block;
+	}
+}
 .chk{
 	align-items: flex-start;
 	gap:4px;
@@ -111,15 +143,12 @@ div.head div input{
 .chk input{
 	accent-color: var(--act1);
 }
-input[type="password"]{
-	background-image:url("../images/eye.svg");
-	background-repeat:no-repeat;
-	background-size:18px;
-	background-position: calc(100% - 16.5px) center;
-}
 
 /*nav*/
-nav{
+nav {
+	position:relative;
+}
+.nav{
 	height: 72px;
 	font-weight: 600;
 }
@@ -131,6 +160,15 @@ nav ul li{
 	height: 100%;
 	padding:28px 20px;
 }
+.page{
+	position:relative;
+}
+.page>span>span{
+	margin:28px 20px;
+}
+nav ul li span{
+	cursor:pointer;
+}
 nav div a{
 	margin-right:20px;
 }
@@ -140,6 +178,43 @@ nav div button.btn1{
 	padding: 0px;
 	font-size: 18px;
 	border-radius:100%;
+}
+.drop{
+	display:none;
+	padding-top:10px;
+}
+.drop>div{
+	height: 40px;
+	padding:10px 0px;
+}		
+.drops{
+	width:100%;
+	display:inline-block;
+	background-color:white;
+	text-align:center;
+	position:absolute;
+	top:100%;
+	left:0px;
+}
+.drops div a{
+	margin:0px;
+}
+.ang{
+	margin-left:10px;
+	i:first-child{
+		display:inline-block;
+	}
+	i:last-child{
+		display:none;
+	}
+}
+.angs{
+	i:first-child{
+		display:none;
+	}
+	i:last-child{
+		display:inline-block;
+	}
 }
 
 /*hero for index page*/
@@ -190,8 +265,15 @@ section.top div.cont div h4{
 }
 	
 /*section Featured courses & all courses &  blog*/
+.slide{
+	display:flex;
+	overflow:hidden;
+}
 div.cont{
+	flex-shrink:0;
+	width:100%;
 	gap: 35px;
+	transition-duration:.5s;
 	grid-template-columns: repeat(3,auto);
 }
 div.cont div.card{
@@ -251,6 +333,28 @@ div.card .price a.free span{
 	font-weight: 400;
 	text-decoration: line-through;
 }
+.list-card{
+	flex-shrink:0;
+	width:100%;
+	transition-duration:.5s;
+	grid-template-columns: repeat(1,100%);
+	div.card{
+		margin-bottom:24px;
+		display:flex;
+		border:1px solid lightgrey;
+		border-radius:20px;
+		position:relative;
+		span.ph{
+			position:absolute;
+			top:20px;
+			left:20px;
+		}
+		img{
+			border-radius:20px 0px 0px 20px;
+			width:40%;
+		}
+	}
+}
 
 /*section num*/
 section div.num{
@@ -266,6 +370,7 @@ section div.num span{
 	border-radius:24px;
 	font-size: 18px;
 	font-weight: 500;
+	cursor:pointer;
 }
 
 /*section GET MORE*/
@@ -376,6 +481,16 @@ section.faqs div.cont>div>div{
 }
 section.faqs div.cont>div>div>p{
 	margin-top:20px;
+}
+section.faqs .hid{	
+	p{
+		display:none;
+	}
+}
+section.faqs .show{
+	p{
+		display:block;
+	}
 }
 section.faqs img{
 	width:50%;
@@ -518,14 +633,37 @@ footer .contact div a svg:hover{
 	}
 
 	/*nav*/
-	nav{
+	.nav{
 		height: 90px;
+	}
+	.show-nav{
+		display:block;
+		margin-bottom:30px;
+		position:absolute;
+		z-index:1;
+		width:100%;
+		background-color:white;
+		padding-bottom:10px;
 	}
 	div.bars{
 		width: 30px;
-		font-size: 29px;
+		font-size: 27px;
+		cursor:pointer;		
+		i:first-child{
+			display:block;
+		}
+		i:last-child{
+			display:none;
+		}
 	}
-	
+	div.bars-tog{
+		i:first-child{
+			display:none;
+		}
+		i:last-child{
+			display:block;
+		}
+	}
 	/*hero*/
 	div.hero{
 		padding-top: 200px;
@@ -539,6 +677,7 @@ footer .contact div a svg:hover{
 	main{
 		padding:0px;	
 	}
+	
 	
 	/*section Top Categories*/
 	section.top div.head{
@@ -560,7 +699,6 @@ footer .contact div a svg:hover{
 	div.cont div.card {
 		max-width: 422px;
 	}
-
 	/*section GET MORE*/
 	section.more div{
 		background-image: linear-gradient(to left, #FDC1C1 0%, #B5FFE7 100%);
@@ -656,11 +794,13 @@ footer .contact div a svg:hover{
 	}
 	
 	/*nav*/
+	.show-nav{
+		margin-bottom:20px;
+	}
 	div.bars{
 		width: 24px;
-		font-size: 21px;
+		font-size: 21px;		
 	}
-
 	/*section Featured courses*/
 	div.cont div.card,
 	section.stat>div,
@@ -673,7 +813,13 @@ footer .contact div a svg:hover{
 		 width:calc(100% - 17px);
 		 margin:24px 8.5px 0px 8.5px;
 	}
-	
+	.list-card div.card span.ph{
+		top:10px;
+		left:10px;
+		padding:5px;
+		font-size:12px;
+	}
+		
 	/*section log-reg*/
 	section.log-reg>div {
 		max-width: 550px;
@@ -701,6 +847,11 @@ footer .contact div a svg:hover{
 
 /*screen(480px)*/
 @media screen and (max-width: 480px) {
+	/*nav*/
+	.show-nav{
+		margin-bottom:10px;
+	}
+	
 	/*section top & stat*/
 	section.top div.cont>div,
 	section.stat div{

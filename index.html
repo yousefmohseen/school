@@ -6,7 +6,7 @@
 		<title>Home</title>
 		<link rel="stylesheet" href="./assets/css/style.css">
 		<link rel="stylesheet" href="./assets/css/default.css">
-				
+
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
@@ -19,24 +19,59 @@
 	</head>
 	<body>
 		<header class="vh-100" >
-			<nav class="d-fl pd pd-t pd-tm pd-m">
-				<img src="./assets/images/logo.png" alt="edupress logo">
-				<ul class="d-fl d-no-t">
-					<li class="active" ><a href="index.html" >Home</a></li>
-					<li><a href="courses.html" >Courses</a></li>
-					<li><a href="blog.html" >Blog</a></li>
-					<li class="d-fl">
-						<a href="" >Page</a>
-						<i class="fa-solid fa-angle-down"></i>
-					</li>
-					<li><a href="" >Premium Theme</a></li>
-				</ul>
-				<div class="reg d-fl d-no-t" >
-					<a href="login-register.html" >Login / Register</a>
-					<button class="btn1" ><i class="fa-solid fa-magnifying-glass"></i></button>
+			<nav>
+				<div class="nav d-fl pd pd-t pd-tm pd-m" >
+					<img src="./assets/images/logo.png" alt="edupress logo">
+					<ul class="d-fl d-no-t">
+						<li class="active"><a href="index.html" >Home</a></li>
+						<li><a href="courses.html" >Courses</a></li>
+						<li><a href="blog.html" >Blog</a></li>
+						<li class="page"  onclick="drop('1')">
+							<span class="d-fl fl-c" >
+								<span >Page</span>
+								<span id="ang1" class="ang" >
+									<i class="fa-solid fa-angle-down"></i>
+									<i class="fa-solid fa-angle-up"></i>
+								</span>
+							</span>
+							<div id="drop1" class="drop" >
+								<div><a href="faqs.html">FAQ</a></div>
+								<div><a href="contact.html">Contact Us</a></div>
+							</div>
+						</li>
+						<li><a href="" >Premium Theme</a></li>
+					</ul>
+					<div class="reg d-fl fl-c d-no-t" >
+						<a href="login-register.html" >Login / Register</a>
+						<button class="btn1" ><i class="fa-solid fa-magnifying-glass"></i></button>
+					</div>
+					<div id="bar"  class="bars d-no d-bl-t" onclick="navbar()">
+						<i class="fa-solid fa-bars"></i>
+						<i class="fa-solid fa-times"></i>
+					</div>
 				</div>
-				<div class="bars d-no d-bl-t" >
-					<i class="fa-solid fa-bars"></i>
+				<div id="navs" class="d-no" >
+					<ul>
+						<li class="active"><a href="index.html" >Home</a></li>
+						<li><a href="courses.html" >Courses</a></li>
+						<li><a href="blog.html" >Blog</a></li>
+						<li onclick="drop('2')">
+							<span>Page</span>
+							<span id="ang2" class="ang" >
+								<i class="fa-solid fa-angle-down"></i>
+								<i class="fa-solid fa-angle-up"></i>
+							</span>
+							<div id="drop2" class="drop" >
+								<div><a href="faqs.html">FAQ</a></div>
+								<div><a href="contact.html">Contact Us</a></div>
+							</div>
+						</li>
+						<li><a href="" >Premium Theme</a></li>
+					</ul>
+					<div class="reg d-fl fl-c" >
+						<a href="login-register.html" >Login / Register</a>
+						<button class="btn1" ><i class="fa-solid fa-magnifying-glass"></i></button>
+					</div>
 				</div>
 			</nav>
 			<div class="hero pd pd-t pd-tm pd-m" >
@@ -293,5 +328,6 @@
 				Copyright © 2024 LearnPress LMS | Powered by ThimPress
 			</p>
 		</footer>
+		<script src="./assets/js/script.js"></script>
 	</body>
 </html>

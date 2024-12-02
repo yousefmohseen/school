@@ -56,6 +56,9 @@
 .fl-sa{
 	justify-content: space-around;
 }
+.fl-c{
+	justify-content:center;
+}
 .d-gr{
 	display:grid;
 	justify-content:space-between;
@@ -132,6 +135,9 @@
 	}
 	.fl-sa-t{
 		justify-content: space-around;
+	}
+	.fl-c-t{
+		justify-content:center;
 	}
 	.d-gr-t{
 		display:grid;
@@ -211,6 +217,9 @@
 	.fl-sa-tm{
 		justify-content: space-around;
 	}
+	.fl-c-tm{
+		justify-content:center;
+	}
 	.d-gr-tm{
 		display:grid;
 		justify-content:space-between;
@@ -288,6 +297,9 @@
 	}
 	.fl-sa-m{
 		justify-content: space-around;
+	}
+	.fl-c-m{
+		justify-content:center;
 	}
 	.d-gr-m{
 		display:grid;

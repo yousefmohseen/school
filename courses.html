@@ -6,7 +6,7 @@
 		<title>Courses</title>
 		<link rel="stylesheet" href="./assets/css/style.css">
 		<link rel="stylesheet" href="./assets/css/default.css">
-				
+
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
@@ -17,26 +17,61 @@
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/js/all.min.js" integrity="sha512-6sSYJqDreZRZGkJ3b+YfdhB3MzmuP9R7X1QZ6g5aIXhRvR1Y/N/P47jmnkENm7YL3oqsmI6AK+V6AD99uWDnIw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 	</head>
-	<body>
+	<body onload="slide()">
 		<header>
-			<nav class="d-fl pd pd-t pd-tm pd-m">
-				<img src="./assets/images/logo.png" alt="edupress logo">
-				<ul class="d-fl d-no-t">
-					<li><a href="index.html" >Home</a></li>
-					<li class="active" ><a href="courses.html" >Courses</a></li>
-					<li><a href="blog.html" >Blog</a></li>
-					<li class="d-fl">
-						<a href="" >Page</a>
-						<i class="fa-solid fa-angle-down"></i>
-					</li>
-					<li><a href="" >Premium Theme</a></li>
-				</ul>
-				<div class="reg d-fl d-no-t" >
-					<a href="login-register.html" >Login / Register</a>
-					<button class="btn1" ><i class="fa-solid fa-magnifying-glass"></i></button>
+			<nav>
+				<div class="nav d-fl pd pd-t pd-tm pd-m" >
+					<img src="./assets/images/logo.png" alt="edupress logo">
+					<ul class="d-fl d-no-t">
+						<li><a href="index.html" >Home</a></li>
+						<li class="active"><a href="courses.html" >Courses</a></li>
+						<li><a href="blog.html" >Blog</a></li>
+						<li class="page"  onclick="drop('1')">
+							<span class="d-fl fl-c" >
+								<span>Page</span>
+								<span id="ang1" class="ang" >
+									<i class="fa-solid fa-angle-down"></i>
+									<i class="fa-solid fa-angle-up"></i>
+								</span>
+							</span>
+							<div id="drop1" class="drop" >
+								<div><a href="faqs.html">FAQ</a></div>
+								<div><a href="contact.html">Contact Us</a></div>
+							</div>
+						</li>
+						<li><a href="" >Premium Theme</a></li>
+					</ul>
+					<div class="reg d-fl fl-c d-no-t" >
+						<a href="login-register.html" >Login / Register</a>
+						<button class="btn1" ><i class="fa-solid fa-magnifying-glass"></i></button>
+					</div>
+					<div id="bar"  class="bars d-no d-bl-t" onclick="navbar()">
+						<i class="fa-solid fa-bars"></i>
+						<i class="fa-solid fa-times"></i>
+					</div>
 				</div>
-				<div class="bars d-no d-bl-t" >
-					<i class="fa-solid fa-bars"></i>
+				<div id="navs" class="d-no" >
+					<ul>
+						<li><a href="index.html" >Home</a></li>
+						<li class="active"><a href="courses.html" >Courses</a></li>
+						<li><a href="blog.html" >Blog</a></li>
+						<li onclick="drop('2')">
+							<span>Page</span>
+							<span id="ang2" class="ang" >
+								<i class="fa-solid fa-angle-down"></i>
+								<i class="fa-solid fa-angle-up"></i>
+							</span>
+							<div id="drop2" class="drop" >
+								<div><a href="faqs.html">FAQ</a></div>
+								<div><a href="contact.html">Contact Us</a></div>
+							</div>
+						</li>
+						<li><a href="" >Premium Theme</a></li>
+					</ul>
+					<div class="reg d-fl fl-c" >
+						<a href="login-register.html" >Login / Register</a>
+						<button class="btn1" ><i class="fa-solid fa-magnifying-glass"></i></button>
+					</div>
 				</div>
 			</nav>
 			<div class="hero-cor" >
@@ -49,158 +84,428 @@
 				</p>
 			</div>
 		</header>
-		<main>
+		<main>			
 			<section class="pd pd-t pd-tm pd-m" >
 				<div class="head d-fl d-bl-tm" >
-					<h2 class="left">All Courses</h2>
+					<h2 class="left">All Articles</h2>
 					<div class="left d-fl" >
-						<input class="left"  type="text" placeholder="Search" >
-						<i class="fa-brands fa-microsoft active-thr"></i>
-						<i class="fa-solid fa-list"></i>
+						<input class="left"  type="text" placeholder="Search" id="search">
+						<i id="grid" onclick="viewCard('grid')" class="fa-brands fa-microsoft active-thr"></i>
+						<i id="list"  onclick="viewCard('list')" class="fa-solid fa-list"></i>
 					</div>
 				</div>
-				<div class="cont d-gr d-bl-tm" >
-					<div class="card center-tm ma-tm" >
-						<span class="ph" >Photography</span>
-						<img class="w-100"  src="./assets/images/photo-card1.png" alt="">
-						<div class="content" >
-							<p class="left"><span class="prm1">by</span> Determined-Poitras</p>
-							<h4 class="left">Create an LMS Website with LearnPress</h4>
-							<div class="left d-fl fl-st">
-								<div>
-									<img src="./assets/images/hour.svg" alt="">
-									<span class="prm1">2 Weeks</span>
+				<div id="cards" class="slide" >
+					<div class="cont d-gr d-bl-tm">	
+						<div class="card center-tm ma-tm" >
+							<span class="ph" >Photography</span>
+							<img class="w-100"  src="./assets/images/photo-card1.png" alt="">
+							<div class="content" >
+								<p class="left"><span class="prm1">by</span> Determined-Poitras</p>
+								<h4 class="left">Create an LMS Website with LearnPress </h4>
+								<div class="left d-fl fl-st">
+									<div>
+										<img src="./assets/images/hour.svg" alt="">
+										<span class="prm1">2 Weeks</span>
+									</div>
+									<div>
+										<img src="./assets/images/graduation.svg" alt="">
+										<span class="prm1">156 Students</span>
+									</div>
 								</div>
-								<div>
-									<img src="./assets/images/graduation.svg" alt="">
-									<span class="prm1">156 Students</span>
+								<div class="price d-fl" >
+									<a class="free" href="" ><span class="prm1">$29.0</span> Free</a>
+									<a href="" >View more</a>
 								</div>
 							</div>
-							<div class="price d-fl" >
-								<a class="free" href="" ><span class="prm1">$29.0</span> Free</a>
-								<a href="" >View more</a>
+						</div>
+						<div class="card center-tm ma-tm" >
+							<span class="ph" >Photography</span>
+							<img class="w-100"  src="./assets/images/photo-card2.png" alt="">
+							<div class="content" >
+								<p class="left"><span class="prm1">by</span> Determined-Poitras</p>
+								<h4 class="left">Create an LMS WordPress with LearnPress</h4>
+								<div class="left d-fl fl-st">
+									<div>
+										<img src="./assets/images/hour.svg" alt="">
+										<span class="prm1">2 Weeks</span>
+									</div>
+									<div>
+										<img src="./assets/images/graduation.svg" alt="">
+										<span class="prm1">156 Students</span>
+									</div>
+								</div>
+								<div class="price d-fl" >
+									<a class="free" href="" ><span class="prm1">$29.0</span> Free</a>
+									<a href="" >View more</a>
+								</div>
+							</div>
+						</div>
+						<div class="card center-tm ma-tm" >
+							<span class="ph" >Photography</span>
+							<img class="w-100"  src="./assets/images/photo-card3.png" alt="">
+							<div class="content" >
+								<p class="left" ><span class="prm1">by</span> Determined-Poitras</p>
+								<h4 class="left" >Create an LMS CSS with LearnPress3 </h4>
+								<div class="left d-fl fl-st">
+									<div>
+										<img src="./assets/images/hour.svg" alt="">
+										<span class="prm1">2 Weeks</span>
+									</div>
+									<div>
+										<img src="./assets/images/graduation.svg" alt="">
+										<span class="prm1">156 Students</span>
+									</div>
+								</div>
+								<div class="price d-fl" >
+									<a class="free" href="" ><span class="prm1">$29.0</span> Free</a>
+									<a href="" >View more</a>
+								</div>
+							</div>
+						</div>
+						<div class="card center-tm ma-tm" >
+							<span class="ph" >Photography</span>
+							<img class="w-100"  src="./assets/images/photo-card4.png" alt="">
+							<div class="content" >
+								<p class="left" ><span class="prm1">by</span> Determined-Poitras</p>
+								<h4 class="left" >Create an LMS Java with LearnPress </h4>
+								<div class="left d-fl fl-st">
+									<div>
+										<img src="./assets/images/hour.svg" alt="">
+										<span class="prm1">2 Weeks</span>
+									</div>
+									<div>
+										<img src="./assets/images/graduation.svg" alt="">
+										<span class="prm1">156 Students</span>
+									</div>
+								</div>
+								<div class="price d-fl" >
+									<a class="free" href="" ><span class="prm1">$29.0</span> Free</a>
+									<a href="" >View more</a>
+								</div>
+							</div>
+						</div>
+						<div class="card center-tm ma-tm" >
+							<span class="ph" >Photography</span>
+							<img class="w-100"  src="./assets/images/photo-card5.png" alt="">
+							<div class="content" >
+								<p class="left" ><span class="prm1">by</span> Determined-Poitras</p>
+								<h4 class="left" >Create an LMS JavaScript with LearnPress </h4>
+								<div class="left d-fl fl-st">
+									<div>
+										<img src="./assets/images/hour.svg" alt="">
+										<span class="prm1">2 Weeks</span>
+									</div>
+									<div>
+										<img src="./assets/images/graduation.svg" alt="">
+										<span class="prm1">156 Students</span>
+									</div>
+								</div>
+								<div class="price d-fl" >
+									<a class="free" href="" ><span class="prm1">$29.0</span> Free</a>
+									<a href="" >View more</a>
+								</div>
+							</div>
+						</div>
+						<div class="card center-tm ma-tm" >
+							<span class="ph" >Photography</span>
+							<img class="w-100"  src="./assets/images/photo-card6.png" alt="">
+							<div class="content" >
+								<p class="left" ><span class="prm1">by</span> Determined-Poitras</p>
+								<h4 class="left" >Create an LMS HTML with LearnPress</h4>
+								<div class="left d-fl fl-st">
+									<div>
+										<img src="./assets/images/hour.svg" alt="">
+										<span class="prm1">2 Weeks</span>
+									</div>
+									<div>
+										<img src="./assets/images/graduation.svg" alt="">
+										<span class="prm1">156 Students</span>
+									</div>
+								</div>
+								<div class="price d-fl" >
+									<a class="free" href="" ><span class="prm1">$29.0</span> Free</a>
+									<a href="" >View more</a>
+								</div>
 							</div>
 						</div>
 					</div>
-					<div class="card center-tm ma-tm" >
-						<span class="ph" >Photography</span>
-						<img class="w-100"  src="./assets/images/photo-card2.png" alt="">
-						<div class="content" >
-							<p class="left"><span class="prm1">by</span> Determined-Poitras</p>
-							<h4 class="left">Create an LMS Website with LearnPress</h4>
-							<div class="left d-fl fl-st">
-								<div>
-									<img src="./assets/images/hour.svg" alt="">
-									<span class="prm1">2 Weeks</span>
+					<div class="cont d-gr d-bl-tm">	
+						<div class="card center-tm ma-tm" >
+							<span class="ph" >Photography</span>
+							<img class="w-100"  src="./assets/images/photo-card1.png" alt="">
+							<div class="content" >
+								<p class="left"><span class="prm1">by</span> Determined-Poitras</p>
+								<h4 class="left">Create an LMS React with LearnPress</h4>
+								<div class="left d-fl fl-st">
+									<div>
+										<img src="./assets/images/hour.svg" alt="">
+										<span class="prm1">2 Weeks</span>
+									</div>
+									<div>
+										<img src="./assets/images/graduation.svg" alt="">
+										<span class="prm1">156 Students</span>
+									</div>
 								</div>
-								<div>
-									<img src="./assets/images/graduation.svg" alt="">
-									<span class="prm1">156 Students</span>
+								<div class="price d-fl" >
+									<a class="free" href="" ><span class="prm1">$29.0</span> Free</a>
+									<a href="" >View more</a>
 								</div>
 							</div>
-							<div class="price d-fl" >
-								<a class="free" href="" ><span class="prm1">$29.0</span> Free</a>
-								<a href="" >View more</a>
+						</div>
+						<div class="card center-tm ma-tm" >
+							<span class="ph" >Photography</span>
+							<img class="w-100"  src="./assets/images/photo-card2.png" alt="">
+							<div class="content" >
+								<p class="left"><span class="prm1">by</span> Determined-Poitras</p>
+								<h4 class="left">Create an LMS Php with LearnPress</h4>
+								<div class="left d-fl fl-st">
+									<div>
+										<img src="./assets/images/hour.svg" alt="">
+										<span class="prm1">2 Weeks</span>
+									</div>
+									<div>
+										<img src="./assets/images/graduation.svg" alt="">
+										<span class="prm1">156 Students</span>
+									</div>
+								</div>
+								<div class="price d-fl" >
+									<a class="free" href="" ><span class="prm1">$29.0</span> Free</a>
+									<a href="" >View more</a>
+								</div>
+							</div>
+						</div>
+						<div class="card center-tm ma-tm" >
+							<span class="ph" >Photography</span>
+							<img class="w-100"  src="./assets/images/photo-card3.png" alt="">
+							<div class="content" >
+								<p class="left" ><span class="prm1">by</span> Determined-Poitras</p>
+								<h4 class="left" >Create an LMS MySQL with LearnPress </h4>
+								<div class="left d-fl fl-st">
+									<div>
+										<img src="./assets/images/hour.svg" alt="">
+										<span class="prm1">2 Weeks</span>
+									</div>
+									<div>
+										<img src="./assets/images/graduation.svg" alt="">
+										<span class="prm1">156 Students</span>
+									</div>
+								</div>
+								<div class="price d-fl" >
+									<a class="free" href="" ><span class="prm1">$29.0</span> Free</a>
+									<a href="" >View more</a>
+								</div>
+							</div>
+						</div>
+						<div class="card center-tm ma-tm" >
+							<span class="ph" >Photography</span>
+							<img class="w-100"  src="./assets/images/photo-card4.png" alt="">
+							<div class="content" >
+								<p class="left" ><span class="prm1">by</span> Determined-Poitras</p>
+								<h4 class="left" >Create an LMS Data with LearnPress</h4>
+								<div class="left d-fl fl-st">
+									<div>
+										<img src="./assets/images/hour.svg" alt="">
+										<span class="prm1">2 Weeks</span>
+									</div>
+									<div>
+										<img src="./assets/images/graduation.svg" alt="">
+										<span class="prm1">156 Students</span>
+									</div>
+								</div>
+								<div class="price d-fl" >
+									<a class="free" href="" ><span class="prm1">$29.0</span> Free</a>
+									<a href="" >View more</a>
+								</div>
+							</div>
+						</div>
+						<div class="card center-tm ma-tm" >
+							<span class="ph" >Photography</span>
+							<img class="w-100"  src="./assets/images/photo-card5.png" alt="">
+							<div class="content" >
+								<p class="left" ><span class="prm1">by</span> Determined-Poitras</p>
+								<h4 class="left" >Create an LMS Angular with LearnPress</h4>
+								<div class="left d-fl fl-st">
+									<div>
+										<img src="./assets/images/hour.svg" alt="">
+										<span class="prm1">2 Weeks</span>
+									</div>
+									<div>
+										<img src="./assets/images/graduation.svg" alt="">
+										<span class="prm1">156 Students</span>
+									</div>
+								</div>
+								<div class="price d-fl" >
+									<a class="free" href="" ><span class="prm1">$29.0</span> Free</a>
+									<a href="" >View more</a>
+								</div>
+							</div>
+						</div>
+						<div class="card center-tm ma-tm" >
+							<span class="ph" >Photography</span>
+							<img class="w-100"  src="./assets/images/photo-card6.png" alt="">
+							<div class="content" >
+								<p class="left" ><span class="prm1">by</span> Determined-Poitras</p>
+								<h4 class="left" >Create an LMS ajax with LearnPress</h4>
+								<div class="left d-fl fl-st">
+									<div>
+										<img src="./assets/images/hour.svg" alt="">
+										<span class="prm1">2 Weeks</span>
+									</div>
+									<div>
+										<img src="./assets/images/graduation.svg" alt="">
+										<span class="prm1">156 Students</span>
+									</div>
+								</div>
+								<div class="price d-fl" >
+									<a class="free" href="" ><span class="prm1">$29.0</span> Free</a>
+									<a href="" >View more</a>
+								</div>
 							</div>
 						</div>
 					</div>
-					<div class="card center-tm ma-tm" >
-						<span class="ph" >Photography</span>
-						<img class="w-100"  src="./assets/images/photo-card3.png" alt="">
-						<div class="content" >
-							<p class="left" ><span class="prm1">by</span> Determined-Poitras</p>
-							<h4 class="left" >Create an LMS Website with LearnPress</h4>
-							<div class="left d-fl fl-st">
-								<div>
-									<img src="./assets/images/hour.svg" alt="">
-									<span class="prm1">2 Weeks</span>
+					<div class="cont d-gr d-bl-tm">	
+						<div class="card center-tm ma-tm" >
+							<span class="ph" >Photography</span>
+							<img class="w-100"  src="./assets/images/photo-card1.png" alt="">
+							<div class="content" >
+								<p class="left"><span class="prm1">by</span> Determined-Poitras</p>
+								<h4 class="left">Create an LMS json with LearnPress</h4>
+								<div class="left d-fl fl-st">
+									<div>
+										<img src="./assets/images/hour.svg" alt="">
+										<span class="prm1">2 Weeks</span>
+									</div>
+									<div>
+										<img src="./assets/images/graduation.svg" alt="">
+										<span class="prm1">156 Students</span>
+									</div>
 								</div>
-								<div>
-									<img src="./assets/images/graduation.svg" alt="">
-									<span class="prm1">156 Students</span>
+								<div class="price d-fl" >
+									<a class="free" href="" ><span class="prm1">$29.0</span> Free</a>
+									<a href="" >View more</a>
 								</div>
-							</div>
-							<div class="price d-fl" >
-								<a class="free" href="" ><span class="prm1">$29.0</span> Free</a>
-								<a href="" >View more</a>
 							</div>
 						</div>
-					</div>
-					<div class="card center-tm ma-tm" >
-						<span class="ph" >Photography</span>
-						<img class="w-100"  src="./assets/images/photo-card4.png" alt="">
-						<div class="content" >
-							<p class="left" ><span class="prm1">by</span> Determined-Poitras</p>
-							<h4 class="left" >Create an LMS Website with LearnPress</h4>
-							<div class="left d-fl fl-st">
-								<div>
-									<img src="./assets/images/hour.svg" alt="">
-									<span class="prm1">2 Weeks</span>
+						<div class="card center-tm ma-tm" >
+							<span class="ph" >Photography</span>
+							<img class="w-100"  src="./assets/images/photo-card2.png" alt="">
+							<div class="content" >
+								<p class="left"><span class="prm1">by</span> Determined-Poitras</p>
+								<h4 class="left">Create an LMS sas with LearnPress</h4>
+								<div class="left d-fl fl-st">
+									<div>
+										<img src="./assets/images/hour.svg" alt="">
+										<span class="prm1">2 Weeks</span>
+									</div>
+									<div>
+										<img src="./assets/images/graduation.svg" alt="">
+										<span class="prm1">156 Students</span>
+									</div>
 								</div>
-								<div>
-									<img src="./assets/images/graduation.svg" alt="">
-									<span class="prm1">156 Students</span>
+								<div class="price d-fl" >
+									<a class="free" href="" ><span class="prm1">$29.0</span> Free</a>
+									<a href="" >View more</a>
 								</div>
-							</div>
-							<div class="price d-fl" >
-								<a class="free" href="" ><span class="prm1">$29.0</span> Free</a>
-								<a href="" >View more</a>
 							</div>
 						</div>
-					</div>
-					<div class="card center-tm ma-tm" >
-						<span class="ph" >Photography</span>
-						<img class="w-100"  src="./assets/images/photo-card5.png" alt="">
-						<div class="content" >
-							<p class="left" ><span class="prm1">by</span> Determined-Poitras</p>
-							<h4 class="left" >Create an LMS Website with LearnPress</h4>
-							<div class="left d-fl fl-st">
-								<div>
-									<img src="./assets/images/hour.svg" alt="">
-									<span class="prm1">2 Weeks</span>
+						<div class="card center-tm ma-tm" >
+							<span class="ph" >Photography</span>
+							<img class="w-100"  src="./assets/images/photo-card3.png" alt="">
+							<div class="content" >
+								<p class="left" ><span class="prm1">by</span> Determined-Poitras</p>
+								<h4 class="left" >Create an LMS Website with LearnPress15</h4>
+								<div class="left d-fl fl-st">
+									<div>
+										<img src="./assets/images/hour.svg" alt="">
+										<span class="prm1">2 Weeks</span>
+									</div>
+									<div>
+										<img src="./assets/images/graduation.svg" alt="">
+										<span class="prm1">156 Students</span>
+									</div>
 								</div>
-								<div>
-									<img src="./assets/images/graduation.svg" alt="">
-									<span class="prm1">156 Students</span>
+								<div class="price d-fl" >
+									<a class="free" href="" ><span class="prm1">$29.0</span> Free</a>
+									<a href="" >View more</a>
 								</div>
-							</div>
-							<div class="price d-fl" >
-								<a class="free" href="" ><span class="prm1">$29.0</span> Free</a>
-								<a href="" >View more</a>
 							</div>
 						</div>
-					</div>
-					<div class="card center-tm ma-tm" >
-						<span class="ph" >Photography</span>
-						<img class="w-100"  src="./assets/images/photo-card6.png" alt="">
-						<div class="content" >
-							<p class="left" ><span class="prm1">by</span> Determined-Poitras</p>
-							<h4 class="left" >Create an LMS Website with LearnPress</h4>
-							<div class="left d-fl fl-st">
-								<div>
-									<img src="./assets/images/hour.svg" alt="">
-									<span class="prm1">2 Weeks</span>
+						<div class="card center-tm ma-tm" >
+							<span class="ph" >Photography</span>
+							<img class="w-100"  src="./assets/images/photo-card4.png" alt="">
+							<div class="content" >
+								<p class="left" ><span class="prm1">by</span> Determined-Poitras</p>
+								<h4 class="left" >Create an LMS Website with LearnPress16</h4>
+								<div class="left d-fl fl-st">
+									<div>
+										<img src="./assets/images/hour.svg" alt="">
+										<span class="prm1">2 Weeks</span>
+									</div>
+									<div>
+										<img src="./assets/images/graduation.svg" alt="">
+										<span class="prm1">156 Students</span>
+									</div>
 								</div>
-								<div>
-									<img src="./assets/images/graduation.svg" alt="">
-									<span class="prm1">156 Students</span>
+								<div class="price d-fl" >
+									<a class="free" href="" ><span class="prm1">$29.0</span> Free</a>
+									<a href="" >View more</a>
 								</div>
 							</div>
-							<div class="price d-fl" >
-								<a class="free" href="" ><span class="prm1">$29.0</span> Free</a>
-								<a href="" >View more</a>
+						</div>
+						<div class="card center-tm ma-tm" >
+							<span class="ph" >Photography</span>
+							<img class="w-100"  src="./assets/images/photo-card5.png" alt="">
+							<div class="content" >
+								<p class="left" ><span class="prm1">by</span> Determined-Poitras</p>
+								<h4 class="left" >Create an LMS Website with LearnPress17</h4>
+								<div class="left d-fl fl-st">
+									<div>
+										<img src="./assets/images/hour.svg" alt="">
+										<span class="prm1">2 Weeks</span>
+									</div>
+									<div>
+										<img src="./assets/images/graduation.svg" alt="">
+										<span class="prm1">156 Students</span>
+									</div>
+								</div>
+								<div class="price d-fl" >
+									<a class="free" href="" ><span class="prm1">$29.0</span> Free</a>
+									<a href="" >View more</a>
+								</div>
+							</div>
+						</div>
+						<div class="card center-tm ma-tm" >
+							<span class="ph" >Photography</span>
+							<img class="w-100"  src="./assets/images/photo-card6.png" alt="">
+							<div class="content" >
+								<p class="left" ><span class="prm1">by</span> Determined-Poitras</p>
+								<h4 class="left" >Create an LMS Website with LearnPress18</h4>
+								<div class="left d-fl fl-st">
+									<div>
+										<img src="./assets/images/hour.svg" alt="">
+										<span class="prm1">2 Weeks</span>
+									</div>
+									<div>
+										<img src="./assets/images/graduation.svg" alt="">
+										<span class="prm1">156 Students</span>
+									</div>
+								</div>
+								<div class="price d-fl" >
+									<a class="free" href="" ><span class="prm1">$29.0</span> Free</a>
+									<a href="" >View more</a>
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-				<div class="d-fl num center" >
-					<span>
+				<div id="s" class="d-fl num center" >
+					<span id="prev" >
 						<i class="fa-solid fa-angle-left"></i>
 					</span>
 					<span class="active-sec" >1</span>
 					<span>2</span>
 					<span>3</span>
-					<span>
+					<span id="next" >
 						<i class="fa-solid fa-angle-right"></i>
 					</span>
 				</div>
@@ -259,5 +564,6 @@
 				Copyright © 2024 LearnPress LMS | Powered by ThimPress
 			</p>
 		</footer>
+		<script src="./assets/js/script.js"></script>
 	</body>
 </html>

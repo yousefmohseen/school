@@ -6,7 +6,7 @@
 		<title>FAQs</title>
 		<link rel="stylesheet" href="./assets/css/style.css">
 		<link rel="stylesheet" href="./assets/css/default.css">
-				
+
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
@@ -19,24 +19,59 @@
 	</head>
 	<body>
 		<header>
-			<nav class="d-fl pd pd-t pd-tm pd-m">
-				<img src="./assets/images/logo.png" alt="edupress logo">
-				<ul class="d-fl d-no-t">
-					<li><a href="index.html" >Home</a></li>
-					<li><a href="courses.html" >Courses</a></li>
-					<li><a href="blog.html" >Blog</a></li>
-					<li class="active" >
-						<a href="" >Page</a>
-						<i class="fa-solid fa-angle-down"></i>
-					</li>
-					<li><a href="" >Premium Theme</a></li>
-				</ul>
-				<div class="reg d-fl d-no-t" >
-					<a href="login-register.html" >Login / Register</a>
-					<button class="btn1" ><i class="fa-solid fa-magnifying-glass"></i></button>
+			<nav>
+				<div class="nav d-fl pd pd-t pd-tm pd-m" >
+					<img src="./assets/images/logo.png" alt="edupress logo">
+					<ul class="d-fl d-no-t">
+						<li class="active"><a href="index.html" >Home</a></li>
+						<li><a href="courses.html" >Courses</a></li>
+						<li><a href="blog.html" >Blog</a></li>
+						<li class="page"  onclick="drop('1')">
+							<span class="d-fl fl-c" >
+								<span>Page</span>
+								<span id="ang1" class="ang" >
+									<i class="fa-solid fa-angle-down"></i>
+									<i class="fa-solid fa-angle-up"></i>
+								</span>
+							</span>
+							<div id="drop1" class="drop" >
+								<div class="active"><a href="faqs.html">FAQ</a></div>
+								<div><a href="contact.html">Contact Us</a></div>
+							</div>
+						</li>
+						<li><a href="" >Premium Theme</a></li>
+					</ul>
+					<div class="reg d-fl fl-c d-no-t" >
+						<a href="login-register.html" >Login / Register</a>
+						<button class="btn1" ><i class="fa-solid fa-magnifying-glass"></i></button>
+					</div>
+					<div id="bar"  class="bars d-no d-bl-t" onclick="navbar()">
+						<i class="fa-solid fa-bars"></i>
+						<i class="fa-solid fa-times"></i>
+					</div>
 				</div>
-				<div class="bars d-no d-bl-t" >
-					<i class="fa-solid fa-bars"></i>
+				<div id="navs" class="d-no" >
+					<ul>
+						<li class="active"><a href="index.html" >Home</a></li>
+						<li><a href="courses.html" >Courses</a></li>
+						<li><a href="blog.html" >Blog</a></li>
+						<li onclick="drop('2')">
+							<span>Page</span>
+							<span id="ang2" class="ang" >
+								<i class="fa-solid fa-angle-down"></i>
+								<i class="fa-solid fa-angle-up"></i>
+							</span>
+							<div id="drop2" class="drop" >
+								<div class="active"><a href="faqs.html">FAQ</a></div>
+								<div><a href="contact.html">Contact Us</a></div>
+							</div>
+						</li>
+						<li><a href="" >Premium Theme</a></li>
+					</ul>
+					<div class="reg d-fl fl-c" >
+						<a href="login-register.html" >Login / Register</a>
+						<button class="btn1" ><i class="fa-solid fa-magnifying-glass"></i></button>
+					</div>
 				</div>
 			</nav>
 			<div class="hero-cor" >
@@ -50,21 +85,15 @@
 			</div>
 		</header>
 		<main>
-			<section class="pd pd-t pd-tm pd-m faqs left">
+			<section id="faqs"  class="pd pd-t pd-tm pd-m faqs left">
 				<div class="head" >
 					<h2 class="left">FAQs</h2>
 				</div>
 				<div class="d-fl d-bl-tm cont" >
 					<div>
-						<div>	
-							<div class="d-fl" >
+						<div class="hid">	
+							<div onclick="show('1')" class="d-fl" >
 								<h5>What Does Royalty Free Mean?</h5>
-								<i class="fa-solid fa-angle-down prm2"></i>
-							</div>
-						</div>
-						<div>	
-							<div class="d-fl" >
-								<h5 class="active-thr" >What Does Royalty Free Mean?</h5>
 								<i class="fa-solid fa-angle-down prm2"></i>
 							</div>
 							<p class="left" >
@@ -74,43 +103,91 @@
 								parturient mauris curabitur lorem in.
 							</p>
 						</div>
-						<div>	
-							<div class="d-fl" >
+						<div class="hid">	
+							<div onclick="show('2')" class="d-fl" >
 								<h5>What Does Royalty Free Mean?</h5>
 								<i class="fa-solid fa-angle-down prm2"></i>
 							</div>
+							<p class="left" >
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras facilisis 
+								faucibus odio arcu duis dui, adipiscing facilisis. Urna, donec turpis 
+								egestas volutpat. Quisque nec non amet quis. Varius tellus justo odio 
+								parturient mauris curabitur lorem in.
+							</p>
 						</div>
-						<div>	
-							<div class="d-fl" >
+						<div class="hid">	
+							<div onclick="show('3')" class="d-fl" >
 								<h5>What Does Royalty Free Mean?</h5>
 								<i class="fa-solid fa-angle-down prm2"></i>
 							</div>
+							<p class="left" >
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras facilisis 
+								faucibus odio arcu duis dui, adipiscing facilisis. Urna, donec turpis 
+								egestas volutpat. Quisque nec non amet quis. Varius tellus justo odio 
+								parturient mauris curabitur lorem in.
+							</p>
+						</div>
+						<div class="hid">	
+							<div onclick="show('4')" class="d-fl" >
+								<h5>What Does Royalty Free Mean?</h5>
+								<i class="fa-solid fa-angle-down prm2"></i>
+							</div>
+							<p class="left" >
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras facilisis 
+								faucibus odio arcu duis dui, adipiscing facilisis. Urna, donec turpis 
+								egestas volutpat. Quisque nec non amet quis. Varius tellus justo odio 
+								parturient mauris curabitur lorem in.
+							</p>
 						</div>
 					</div>
 					<div>
-						<div>	
-							<div class="d-fl" >
+						<div class="hid">	
+							<div onclick="show('5')" class="d-fl" >
 								<h5>What Does Royalty Free Mean?</h5>
 								<i class="fa-solid fa-angle-down prm2"></i>
 							</div>
+							<p class="left" >
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras facilisis 
+								faucibus odio arcu duis dui, adipiscing facilisis. Urna, donec turpis 
+								egestas volutpat. Quisque nec non amet quis. Varius tellus justo odio 
+								parturient mauris curabitur lorem in.
+							</p>
 						</div>
-						<div>	
-							<div class="d-fl" >
+						<div class="hid">	
+							<div onclick="show('6')" class="d-fl" >
 								<h5>What Does Royalty Free Mean?</h5>
 								<i class="fa-solid fa-angle-down prm2"></i>
 							</div>
+							<p class="left" >
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras facilisis 
+								faucibus odio arcu duis dui, adipiscing facilisis. Urna, donec turpis 
+								egestas volutpat. Quisque nec non amet quis. Varius tellus justo odio 
+								parturient mauris curabitur lorem in.
+							</p>
 						</div>
-						<div>	
-							<div class="d-fl" >
+						<div class="hid">	
+							<div onclick="show('7')" class="d-fl" >
 								<h5>What Does Royalty Free Mean?</h5>
 								<i class="fa-solid fa-angle-down prm2"></i>
 							</div>
+							<p class="left" >
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras facilisis 
+								faucibus odio arcu duis dui, adipiscing facilisis. Urna, donec turpis 
+								egestas volutpat. Quisque nec non amet quis. Varius tellus justo odio 
+								parturient mauris curabitur lorem in.
+							</p>
 						</div>
-						<div>	
-							<div class="d-fl" >
+						<div class="hid">	
+							<div onclick="show('8')" class="d-fl" >
 								<h5>What Does Royalty Free Mean?</h5>
 								<i class="fa-solid fa-angle-down prm2"></i>
 							</div>
+							<p class="left" >
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras facilisis 
+								faucibus odio arcu duis dui, adipiscing facilisis. Urna, donec turpis 
+								egestas volutpat. Quisque nec non amet quis. Varius tellus justo odio 
+								parturient mauris curabitur lorem in.
+							</p>
 						</div>
 					</div>
 				</div>
@@ -170,5 +247,6 @@
 				Copyright © 2024 LearnPress LMS | Powered by ThimPress
 			</p>
 		</footer>
+		<script src="./assets/js/script.js"></script>
 	</body>
 </html>
