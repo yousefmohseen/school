@@ -31,20 +31,24 @@ function viewCard(val){
 	const cont = document.getElementById("cards").querySelectorAll('.cont');
 	const lc = document.getElementById("cards").querySelectorAll('.list-card');
 	if(val=='grid'){
-		grid.classList.add("active-thr");
-		list.classList.remove("active-thr");
-		for(let i=0;i<lc.length;i++){
-			lc[i].classList.add("cont","d-gr");
-			lc[i].classList.remove("list-card");
+		if(grid.classList.contains("active-thr")==false){
+			list.classList.remove("active-thr");
+			grid.classList.add("active-thr");
+			for(let i=0;i<lc.length;i++){
+				lc[i].classList.add("cont","d-gr");
+				lc[i].classList.remove("list-card");
+			}
 		}
 	}
 	if(val=='list'){
-		list.classList.add("active-thr");
-		grid.classList.remove("active-thr");
-		for(let j=0;j<cont.length;j++){
-			cont[j].classList.remove("cont","d-gr");
-			cont[j].classList.add("list-card");
-		}			
+		if(list.classList.contains("active-thr")==false){
+			grid.classList.remove("active-thr");
+			list.classList.add("active-thr");
+			for(let j=0;j<cont.length;j++){
+				cont[j].classList.remove("cont","d-gr");
+				cont[j].classList.add("list-card");
+			}
+		}
 	}
 }
 	
