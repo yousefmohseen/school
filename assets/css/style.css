@@ -121,17 +121,21 @@ div.input span{
 	top:16px;
 	right:16px;
 }
-div.input span>i:first-child{
+div.input span>i:first-child,
+div.input span>svg:first-child{
 	display:block;
 }
-div.input span>i:last-child{
+div.input span>i:last-child,
+div.input span>svg:last-child{
 	display:none;
 }
 
-div.input span.eye-slash>i:first-child{
+div.input span.eye-slash>i:first-child,
+div.input span.eye-slash>svg:first-child{
 	display:none;
 }
-div.input span.eye-slash>i:last-child{
+div.input span.eye-slash>i:last-child,
+div.input span.eye-slash>svg:last-child{
 	display:block;
 }
 .chk{
@@ -201,16 +205,20 @@ nav div button.btn1{
 .ang{
 	margin-left:10px;
 }
-.ang>i:first-child{
+.ang>i:first-child,
+.ang>svg:first-child{
 	display:inline-block;
 }
-.ang>i:last-child{
+.ang>i:last-child,
+.ang>svg:last-child{
 	display:none;
 }
-.angs>i:first-child{
+.angs>i:first-child,
+.angs>svg:first-child{
 	display:none;
 }
-.angs>i:last-child{
+.angs>i:last-child,
+.angs>svg:last-child{
 	display:inline-block;
 }
 
@@ -644,16 +652,20 @@ footer .contact div a svg:hover{
 		font-size: 27px;
 		cursor:pointer;
 	}		
-	div.bars>i:first-child{
-		display:block;	
+	div.bars>i:first-child,
+	div.bars>svg:first-child{
+		display:block;
 	}
-	div.bars>i:last-child{
+	div.bars>i:last-child,
+	div.bars>svg:last-child{
 		display:none;	
 	}
-	div.bars-tog>i:first-child{
+	div.bars-tog>i:first-child,
+	div.bars-tog>svg:first-child{
 		display:none;
 	}
-	div.bars-tog>i:last-child{
+	div.bars-tog>i:last-child,
+	div.bars-tog>svg:last-child{
 		display:block;
 	}
 	/*hero*/
